@@ -7,6 +7,7 @@ console.log('TensorFlow imported successfully:', tf.version.tfjs);
 
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
   if (message.action === 'classifyImage') {
+    console.log(message.imageUrl);
     classifyImage(message.imageUrl, sendResponse);
     return true; // Indicates that sendResponse will be called asynchronously
   }
